@@ -1,3 +1,4 @@
+import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
@@ -7,22 +8,20 @@ import { useState, useEffect } from "react";
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const [panier, setPanier] = useState([]);
-
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        "https://myfirst-vinted-api.herokuapp.com/"
-      );
-      // console.log(response.data);
-      setData(response.data);
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://lereacteur-vinted-api.herokuapp.com/offers"
+        );
+
+        setData(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
     fetchData();
   }, []);
 
@@ -41,8 +40,8 @@ function App() {
         </ul>
       </nav>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Offer" element={<Offer />} />
+        <Route path="/" element={<Home data={data} />} />
+        <Route path="/offer/:id" element={<Offer />} />
       </Routes>
     </Router>
   );
