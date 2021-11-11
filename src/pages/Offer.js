@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 const Offer = () => {
   //   const offerId = useParams();   {id: 5675765345636453698789}
-  const { id } = useParams(); //
+  const { id } = useParams(); // console.log(id);
 
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -23,13 +23,25 @@ const Offer = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [id]);
+
+  //   mettre id dans les crochets parce qu'il peut changer
 
   return isLoading ? (
     <span>En cours de chargement... </span>
   ) : (
-    <div>
+    <div className="article">
       <img src={data.product_image.secure_url} alt="" />
+
+      {data.product_details.map((elem, index) => {
+        const keys = Object.keys(elem);
+        return (
+          <div className="details">
+            <span>{keys[0]}</span>
+            <span>{elem[keys[0]]}</span>
+          </div>
+        );
+      })}
       <span>The product id is : {id}</span>
     </div>
   );

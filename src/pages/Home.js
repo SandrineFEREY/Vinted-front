@@ -12,7 +12,7 @@ const Home = () => {
         const response = await axios.get(
           "https://lereacteur-vinted-api.herokuapp.com/offers"
         );
-
+        // console.log(response.data)
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -26,8 +26,6 @@ const Home = () => {
     <span>En cours de chargement... </span>
   ) : (
     <div className="container">
-      <header>VINTED</header>
-
       <div className="products-container">
         {data.offers.map((elem, index) => {
           return (
@@ -35,7 +33,7 @@ const Home = () => {
               <Link to={`/offer/${elem._id}`}>
                 Offer
                 <div>
-                  <img src={elem.product_image.url} alt="" />
+                  <img src={elem.product_image.secure_url} alt="" />
                 </div>
                 <p>{elem.product_price}</p>
                 {elem.product_details.map((elem2, index) => {
