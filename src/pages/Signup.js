@@ -8,6 +8,8 @@ const Signup = ({ setUser }) => {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
@@ -15,7 +17,10 @@ const Signup = ({ setUser }) => {
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
         { username: name, email: email, password: password }
       );
-      setUser(response.data);
+      if (response.data.token) {
+        setUser(response.data.token);
+        navigate("/");
+      }
     } catch (error) {
       console.log(error.response);
       console.log(error.message);

@@ -7,6 +7,8 @@ const Login = ({ setUser }) => {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
@@ -18,7 +20,10 @@ const Login = ({ setUser }) => {
           password: password,
         }
       );
-      setUser(response.data);
+      if (response.data.token) {
+        setUser(response.data.token);
+        navigate("/");
+      }
     } catch (error) {
       console.log(error.message);
       console.log(error.response);

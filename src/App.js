@@ -11,19 +11,19 @@ import Header from "./components/Header";
 function App() {
   const [token, setToken] = useState(null);
 
-  const setUser = () => {
-    // if (token) {
-    Cookies.set("userToken", token);
-    // } else {
-    //   Cookies.remove("userToken");
-    // }
+  const setUser = (token) => {
+    if (token) {
+      Cookies.set("userToken", token);
+    } else {
+      Cookies.remove("userToken");
+    }
 
-    // setToken(token);
+    setToken(token);
   };
 
   return (
     <Router>
-      <Header />
+      <Header token={token} setUser={setUser} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offer/:id" element={<Offer />} />
