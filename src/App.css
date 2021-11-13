@@ -10,7 +10,7 @@ body {
   height: 130px;
   display: flex;
   justify-content: space-around;
-  border: blue solid 3px;
+  /* border: blue solid 3px; */
 }
 
 .block {
@@ -32,8 +32,8 @@ body {
   border-radius: 10px;
   border: #2db0ba solid 1px;
   margin: 40px 20px;
-  /* color: #2db0ba;
-  text-decoration: none; */
+  color: #2db0ba;
+  text-decoration: none;
 }
 
 .link-vente {
@@ -71,14 +71,20 @@ body {
   width: 220px;
   height: 350px;
   object-fit: cover;
+  margin-top: 20px;
 }
 
 .article {
+  background-color: #eaedee;
   display: flex;
   justify-content: space-around;
+  padding: 20px;
 }
 
 .details {
+  width: 350px;
+  height: 430px;
+  background-color: white;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -118,7 +124,8 @@ input {
 
 .bouton-inscription,
 .bouton-seconnecter,
-.sedeconnecter {
+.sedeconnecter,
+.bouton-achat {
   padding: 20px;
   border-radius: 10px;
   border: 1px;

@@ -33,17 +33,21 @@ const Offer = () => {
     <div className="article">
       <img src={data.product_image.secure_url} alt="" />
 
-      <span>{data.product_price}</span>
+      <div className="details">
+        <span>{data.product_price}</span>
 
-      {data.product_details.map((elem, index) => {
-        const keys = Object.keys(elem);
-        return (
-          <div className="details">
-            <span>{keys[0]}</span>
-            <span>{elem[keys[0]]}</span>
-          </div>
-        );
-      })}
+        {data.product_details.map((elem, index) => {
+          const keys = Object.keys(elem);
+          return (
+            <div>
+              <span>{keys[0]}</span>
+              <span>{elem[keys[0]]}</span>
+            </div>
+          );
+        })}
+        <input className="bouton-achat" type="submit" value={"Acheter"} />
+      </div>
+
       {/* <span>The product id is : {id}</span> */}
     </div>
   );
