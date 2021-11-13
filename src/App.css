@@ -31,9 +31,9 @@ body {
   padding: 20px;
   border-radius: 10px;
   border: #2db0ba solid 1px;
-  margin: 40px 20px;
-  color: #2db0ba;
-  text-decoration: none;
+  margin: 40px 10px;
+  /* color: #2db0ba;
+  text-decoration: none; */
 }
 
 .link-vente {
