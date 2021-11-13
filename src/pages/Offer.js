@@ -33,6 +33,8 @@ const Offer = () => {
     <div className="article">
       <img src={data.product_image.secure_url} alt="" />
 
+      <span>{data.product_price}</span>
+
       {data.product_details.map((elem, index) => {
         const keys = Object.keys(elem);
         return (
@@ -42,7 +44,7 @@ const Offer = () => {
           </div>
         );
       })}
-      <span>The product id is : {id}</span>
+      {/* <span>The product id is : {id}</span> */}
     </div>
   );
 };

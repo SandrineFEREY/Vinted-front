@@ -32,6 +32,7 @@ const Signup = ({ setUser }) => {
 
   return (
     <div className="formulaire">
+      <h2>S'inscrire</h2>
       <form onSubmit={handleSubmit}>
         <input
           onChange={(event) => {
@@ -62,7 +63,11 @@ const Signup = ({ setUser }) => {
         <br />
         <span style={{ color: "red" }}>{errorMessage} </span>
         <br />
-        <input type="submit" value={"S'inscrire"} />
+        <input
+          className="bouton-inscription"
+          type="submit"
+          value={"S'inscrire"}
+        />
       </form>
     </div>
   );

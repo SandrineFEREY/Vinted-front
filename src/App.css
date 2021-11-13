@@ -2,11 +2,53 @@ body {
   background-color: white;
 }
 
-header {
-  height: 50px;
-  border: salmon solid 3px;
+.logo {
+  height: 100px;
+}
+
+.header {
+  height: 130px;
   display: flex;
   justify-content: space-around;
+  border: blue solid 3px;
+}
+
+.block {
+  display: flex;
+}
+.block input {
+  height: 30px;
+  border: none;
+  background-color: #f5f6f7;
+}
+
+.tri {
+  display: flex;
+}
+
+.link-inscription,
+.link-connexion {
+  padding: 20px;
+  border-radius: 10px;
+  border: #2db0ba solid 1px;
+  margin: 40px 20px;
+  /* color: #2db0ba;
+  text-decoration: none; */
+}
+
+.link-vente {
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px;
+  background-color: #2db0ba;
+  margin: 40px 20px;
+  color: white;
+}
+
+.imgHeader {
+  height: 440px;
+  width: 1420px;
+  object-fit: cover;
 }
 
 .container {
@@ -17,11 +59,11 @@ header {
 .products-container {
   display: flex;
   flex-wrap: wrap;
-  border: 3px solid seagreen;
+  /* border: 3px solid seagreen; */
 }
 
 .products {
-  border: 2px solid salmon;
+  /* border: 2px solid salmon; */
   margin: 10px;
 }
 
@@ -32,9 +74,14 @@ header {
 }
 
 .article {
+  display: flex;
+  justify-content: space-around;
 }
 
 .details {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .formulaire {
@@ -51,9 +98,31 @@ header {
   align-items: center;
 }
 
+.connexion input {
+  border: none;
+  border-bottom: orange solid 1px;
+}
+.formulaire input {
+  border: none;
+  border-bottom: orange solid 1px;
+}
+
 input {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 270px;
+  height: 40px;
+}
+
+.bouton-inscription,
+.bouton-seconnecter,
+.sedeconnecter {
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px;
+  background-color: #2db0ba;
+  color: white;
+  margin: 40px 20px;
 }

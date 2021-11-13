@@ -35,6 +35,7 @@ const Login = ({ setUser }) => {
 
   return (
     <div className="connexion">
+      <h2>Se connecter</h2>
       <form onSubmit={handleSubmit}>
         <input
           onChange={(event) => setEmail(event.target.value)}
@@ -49,7 +50,11 @@ const Login = ({ setUser }) => {
           value={password}
         />
         <span style={{ color: "red" }}>{errorMessage}</span>
-        <input type="submit" value={"Se connecter"} />
+        <input
+          className="bouton-seconnecter"
+          type="submit"
+          value={"Se connecter"}
+        />
       </form>
     </div>
   );
