@@ -4,6 +4,7 @@ import { useState } from "react";
 import Cookies from "js-cookie";
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
+import Publish from "./pages/Publish";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Header from "./components/Header";
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offer/:id" element={<Offer />} />
+        <Route path="/publish" element={<Publish setUser={setUser} />} />
         <Route path="/signup" element={<Signup setUser={setUser} />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
       </Routes>

@@ -17,15 +17,25 @@ const Header = ({ token, setUser }) => {
           alt="logo"
         />
         {token ? (
-          <button
-            className="sedeconnecter"
-            onClick={() => {
-              setUser(null);
-              navigate("/");
-            }}
-          >
-            Se déconnecter
-          </button>
+          <div>
+            <button
+              className="sedeconnecter"
+              onClick={() => {
+                setUser(null);
+                navigate("/");
+              }}
+            >
+              Se déconnecter
+            </button>
+            <button
+              className="publish"
+              onClick={() => {
+                navigate("/publish");
+              }}
+            >
+              Publish
+            </button>
+          </div>
         ) : (
           <div className="block">
             <div>
